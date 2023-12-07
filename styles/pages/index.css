@@ -19,20 +19,20 @@ body{
   height: 40px;
   width: 50px;
   position: absolute;
-  margin-top: -25px;
+  margin-top: 15px;
   margin-left: -18px;
 }
 .imgg1{
   /* margin-bottom: 12px; */
   position: absolute;
-  margin-left: 7px;
-  margin-top: -35px;
+  margin-left: 18px;
+  margin-top: -15px;
 
 }
 .imgg2{
   position: absolute;
   margin-top: 30px;
-  margin-left: -8px;
+  margin-left: 5px;
 }
 .move{
  margin-right: 100px;
@@ -176,31 +176,13 @@ nav ul li a{
 
 .products-grid {
   display: grid;
-
-  /* - In CSS Grid, 1fr means a column will take up the
-       remaining space in the grid.
-     - If we write 1fr 1fr ... 1fr; 8 times, this will
-       divide the grid into 8 columns, each taking up an
-       equal amount of the space.
-     - repeat(8, 1fr); is a shortcut for repeating "1fr"
-       8 times (instead of typing out "1fr" 8 times).
-       repeat(...) is a special property that works with
-       display: grid; */
   grid-template-columns: repeat(8, 1fr);
 }
-
-/* @media is used to create responsive design (making the
-   website look good on any screen size). This @media
-   means when the screen width is 2000px or less, we
-   will divide the grid into 7 columns instead of 8. */
 @media (max-width: 2000px) {
   .products-grid {
     grid-template-columns: repeat(7, 1fr);
   }
 }
-
-/* This @media means when the screen width is 1600px or
-   less, we will divide the grid into 6 columns. */
 @media (max-width: 1600px) {
   .products-grid {
     grid-template-columns: repeat(6, 1fr);
@@ -262,9 +244,6 @@ nav ul li a{
 transform: scale(1.2);
 }
 .product-image {
-  /* Images will overflow their container by default. To
-    prevent this, we set max-width and max-height to 100%
-    so they stay inside their container. */
   max-width: 100%;
   max-height: 100%;
 }
@@ -330,6 +309,13 @@ transform: scale(1.2);
 }
 
 
+.strip{
+  margin-top: 80px;
+  height: 100px;
+  width: 100%;
+}
+
+
 .brands{
   margin: 100px auto;
 }
@@ -343,7 +329,7 @@ transform: scale(1.2);
 .col-5 img{
   width: 100%;
   cursor: pointer;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 .col-5 img:hover{
   filter: grayscale(0);
