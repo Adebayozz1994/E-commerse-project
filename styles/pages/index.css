@@ -1,0 +1,579 @@
+.main {
+  margin-top: 60px;
+}
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+.imgg{
+  height: 40px;
+  width: 50px;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -18px;
+}
+.imgg1{
+  /* margin-bottom: 12px; */
+  position: absolute;
+  margin-left: 7px;
+  margin-top: -35px;
+
+}
+.imgg2{
+  position: absolute;
+  margin-top: 30px;
+  margin-left: -8px;
+}
+.move{
+ margin-right: 100px;
+}
+
+nav{
+  background: rgb(19, 18, 18);
+  background: rgb(236, 59, 10);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 100px;
+  padding: 0 50px;
+font-weight: bold;   
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase; 
+}
+/* a.active, a:hover{
+  background-color:rgba(255, 255, 255, 0.243);
+  transition:.5s;
+  gap: 20px;
+} */
+.checkbtn{
+  font-size:30px ;
+  color:white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media(max-width:952px){
+  label.logo{
+     font-size: 30px;
+     padding-left: 50px; 
+  }
+  nav ul li a {
+      font-size: 16px;
+  }
+
+}
+@media (max-width:475px){
+  .checkbtn{
+      display: block;
+  }
+  ul{
+      position: fixed;
+      width: 100%;
+      height: 60vh;
+      background:#2c3e50;
+      top: 80px;
+      left:-100%;
+      text-align: center;
+      transition:all .5s;
+  }
+  nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 20px;
+  }
+  nav ul li a{
+      font-size: 20px;
+  }
+  a:hover,a.active{
+      background: none;
+      color: white;
+  }
+  #check:checked~ul{
+      left: 0;
+  }
+  .imgg,.imgg1,.imgg2{
+    margin-left: 159px;
+  }
+  }
+
+  @media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 40vh;
+        background:#2c3e50;
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition:all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 20px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: white;
+    }
+    #check:checked~ul{
+        left: 0;
+    }
+    .imgg,.imgg1,.imgg2{
+      margin-left:359px;
+    }
+    }
+  
+
+
+
+
+.products-grid {
+  display: grid;
+
+  /* - In CSS Grid, 1fr means a column will take up the
+       remaining space in the grid.
+     - If we write 1fr 1fr ... 1fr; 8 times, this will
+       divide the grid into 8 columns, each taking up an
+       equal amount of the space.
+     - repeat(8, 1fr); is a shortcut for repeating "1fr"
+       8 times (instead of typing out "1fr" 8 times).
+       repeat(...) is a special property that works with
+       display: grid; */
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* @media is used to create responsive design (making the
+   website look good on any screen size). This @media
+   means when the screen width is 2000px or less, we
+   will divide the grid into 7 columns instead of 8. */
+@media (max-width: 2000px) {
+  .products-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* This @media means when the screen width is 1600px or
+   less, we will divide the grid into 6 columns. */
+@media (max-width: 1600px) {
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1300px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-container {
+  padding-top: 40px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  border-right: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(231, 231, 231);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  margin-bottom: 20px;
+}
+.product-image-container:hover{
+transform: scale(1.2);
+}
+.product-image {
+  /* Images will overflow their container by default. To
+    prevent this, we set max-width and max-height to 100%
+    so they stay inside their container. */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-name {
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.product-rating-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-rating-stars {
+  width: 100px;
+  margin-right: 6px;
+}
+
+.product-rating-count {
+  color: rgb(1, 124, 182);
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.product-price {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-quantity-container {
+  margin-bottom: 17px;
+}
+
+.product-spacer {
+  flex: 1;
+}
+
+.added-to-cart {
+  color: rgb(6, 125, 98);
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  /* At first, the "Added to cart" message will
+     be invisible. Use JavaScript to change the
+     opacity and make it visible. */
+  opacity: 0;
+}
+
+.added-to-cart img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 50px;
+}
+
+
+.brands{
+  margin: 100px auto;
+}
+.row{
+  display: flex;
+  justify-content: space-evenly;
+}
+.col-5{
+  width: 100px;
+}
+.col-5 img{
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.col-5 img:hover{
+  filter: grayscale(0);
+}
+
+
+
+.testimonial{
+  padding-top: 100px;
+}
+.testimonial .col-3{
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.testimonial .col-3 img{
+  width:50px;
+  margin-top: 20px;
+  border-radius: 50%;/*square images converted to round shape box*/
+}
+.testimonial .col-3:hover{
+  transform: translateY(-10px);
+}
+.fa.fa-quote-left{
+  font-size: 34px;
+  color: #ff523b;
+}
+.col-3 p{
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+.testimonial .col-3 h3{
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
+
+
+
+
+* {
+  font-family: Open Sans;
+}
+
+
+
+.footer-distributed{
+	background: rgb(236, 59, 10);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color: goldenrod;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  goldenrod;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color: goldenrod;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  goldenrod;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  goldenrod;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  goldenrod;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
